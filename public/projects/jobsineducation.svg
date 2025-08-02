@@ -1,0 +1,72 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="eduGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#eduGrad)"/>
+  
+  <!-- School Building -->
+  <g transform="translate(300, 200)">
+    <!-- Main Building -->
+    <rect x="-80" y="-60" width="160" height="100" fill="white" opacity="0.9"/>
+    <!-- Roof -->
+    <polygon points="-90,-60 0,-100 90,-60" fill="#e53e3e" opacity="0.8"/>
+    <!-- Door -->
+    <rect x="-10" y="10" width="20" height="30" fill="#3182ce"/>
+    <!-- Windows -->
+    <rect x="-60" y="-30" width="20" height="20" fill="#3182ce" opacity="0.7"/>
+    <rect x="-30" y="-30" width="20" height="20" fill="#3182ce" opacity="0.7"/>
+    <rect x="10" y="-30" width="20" height="20" fill="#3182ce" opacity="0.7"/>
+    <rect x="40" y="-30" width="20" height="20" fill="#3182ce" opacity="0.7"/>
+  </g>
+  
+  <!-- Books Stack -->
+  <g transform="translate(150, 250)">
+    <rect x="-20" y="-5" width="40" height="8" fill="#e53e3e" opacity="0.8"/>
+    <rect x="-18" y="-15" width="36" height="8" fill="#3182ce" opacity="0.8"/>
+    <rect x="-22" y="-25" width="44" height="8" fill="#38a169" opacity="0.8"/>
+  </g>
+  
+  <!-- Teacher/Professor -->
+  <g transform="translate(450, 220)">
+    <!-- Head -->
+    <circle cx="0" cy="-20" r="15" fill="#f7fafc"/>
+    <!-- Body -->
+    <rect x="-8" y="-5" width="16" height="25" fill="#3182ce"/>
+    <!-- Arms -->
+    <rect x="-15" y="0" width="10" height="3" fill="#f7fafc"/>
+    <rect x="5" y="0" width="10" height="3" fill="#f7fafc"/>
+  </g>
+  
+  <!-- Apple -->
+  <g transform="translate(120, 150)">
+    <circle cx="0" cy="0" r="12" fill="#e53e3e"/>
+    <rect x="-2" y="-15" width="4" height="8" fill="#38a169"/>
+    <ellipse cx="3" cy="-12" rx="3" ry="6" fill="#38a169"/>
+  </g>
+  
+  <!-- Chalkboard -->
+  <g transform="translate(300, 120)">
+    <rect x="-50" y="-20" width="100" height="40" fill="#2d3748"/>
+    <text x="0" y="0" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">JOB PORTAL</text>
+  </g>
+  
+  <!-- Graduation Caps -->
+  <g transform="translate(480, 100)">
+    <rect x="-15" y="-3" width="30" height="6" fill="#3182ce"/>
+    <rect x="-2" y="-8" width="4" height="10" fill="#ffd700"/>
+    <circle cx="0" cy="2" r="2" fill="#ffd700"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="300" y="320" text-anchor="middle" fill="#2d3748" font-family="Arial, sans-serif" font-size="32" font-weight="bold">Jobs in Education</text>
+  <text x="300" y="350" text-anchor="middle" fill="#2d3748" font-family="Arial, sans-serif" font-size="16" opacity="0.8">Education Career Platform</text>
+  
+  <!-- Decorative Elements -->
+  <circle cx="80" cy="80" r="20" fill="white" opacity="0.3"/>
+  <circle cx="520" cy="320" r="25" fill="white" opacity="0.3"/>
+</svg> 

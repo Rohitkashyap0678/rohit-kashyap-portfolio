@@ -1,0 +1,71 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="colledgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#colledgeGrad)"/>
+  
+  <!-- Graduation Cap -->
+  <g transform="translate(300, 160)">
+    <!-- Cap Base -->
+    <ellipse cx="0" cy="10" rx="80" ry="15" fill="white" opacity="0.9"/>
+    <!-- Cap Top -->
+    <rect x="-60" y="-10" width="120" height="20" fill="white" opacity="0.9"/>
+    <!-- Tassel -->
+    <rect x="45" y="-15" width="3" height="40" fill="#ffd700"/>
+    <circle cx="46.5" cy="25" r="4" fill="#ffd700"/>
+  </g>
+  
+  <!-- Buildings/Campus -->
+  <g transform="translate(150, 280)">
+    <rect x="0" y="-40" width="30" height="60" fill="white" opacity="0.7"/>
+    <rect x="35" y="-60" width="25" height="80" fill="white" opacity="0.7"/>
+    <rect x="65" y="-30" width="20" height="50" fill="white" opacity="0.7"/>
+    <!-- Windows -->
+    <rect x="5" y="-35" width="8" height="8" fill="#667eea"/>
+    <rect x="17" y="-35" width="8" height="8" fill="#667eea"/>
+    <rect x="40" y="-50" width="6" height="6" fill="#667eea"/>
+    <rect x="50" y="-50" width="6" height="6" fill="#667eea"/>
+  </g>
+  
+  <!-- Globe/World -->
+  <g transform="translate(450, 180)">
+    <circle cx="0" cy="0" r="50" fill="white" opacity="0.8"/>
+    <!-- Continents -->
+    <path d="M-30 -20 Q-10 -30 10 -20 Q30 -10 35 10 Q20 30 -10 25 Q-35 15 -30 -20 Z" fill="#667eea" opacity="0.6"/>
+    <path d="M-20 5 Q0 -5 20 5 Q15 25 -5 20 Q-25 15 -20 5 Z" fill="#667eea" opacity="0.6"/>
+  </g>
+  
+  <!-- Job/Career Icons -->
+  <g transform="translate(100, 120)">
+    <!-- Briefcase -->
+    <rect x="-15" y="-8" width="30" height="20" rx="3" fill="white" opacity="0.8"/>
+    <rect x="-8" y="-12" width="16" height="4" rx="2" fill="white" opacity="0.8"/>
+    <circle cx="-5" cy="2" r="2" fill="#667eea"/>
+    <circle cx="5" cy="2" r="2" fill="#667eea"/>
+  </g>
+  
+  <!-- Search Icon -->
+  <g transform="translate(500, 120)">
+    <circle cx="0" cy="0" r="15" stroke="white" stroke-width="3" fill="none" opacity="0.8"/>
+    <path d="M11 11 L20 20" stroke="white" stroke-width="3" opacity="0.8"/>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g opacity="0.3">
+    <path d="M200 180 Q300 120 400 180" stroke="white" stroke-width="2" fill="none"/>
+    <path d="M150 200 Q250 250 350 200" stroke="white" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="300" y="320" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="36" font-weight="bold">Colledge US</text>
+  <text x="300" y="350" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" opacity="0.9">Global Job Platform</text>
+  
+  <!-- Stats -->
+  <text x="150" y="380" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" opacity="0.8">10k+ Jobs</text>
+  <text x="450" y="380" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" opacity="0.8">Global Reach</text>
+</svg> 
