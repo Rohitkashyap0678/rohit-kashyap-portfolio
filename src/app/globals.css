@@ -58,6 +58,11 @@
   }
 }
 
+/* Mobile menu body lock */
+.mobile-menu-open {
+  overflow: hidden !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
