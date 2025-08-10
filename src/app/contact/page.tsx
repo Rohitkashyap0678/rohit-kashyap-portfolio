@@ -12,11 +12,11 @@ import Image from 'next/image';
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="pt-24 pb-12 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -24,10 +24,10 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-6">
               Let's Work Together
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Ready to bring your ideas to life? I'm here to help you build exceptional digital experiences.
             </p>
           </motion.div>
@@ -35,7 +35,7 @@ export default function Contact() {
       </section>
 
       {/* Upwork Showcase */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -43,8 +43,8 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Hire Me on Upwork</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">Hire Me on Upwork</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Join 30+ satisfied clients who have trusted me with their projects on Upwork
             </p>
           </motion.div>
@@ -160,7 +160,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}

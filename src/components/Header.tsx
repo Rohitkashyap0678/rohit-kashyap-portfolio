@@ -65,7 +65,7 @@ const Header = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-gray-200/20'
+          ? 'bg-black/80 backdrop-blur-md shadow-lg border-b border-gray-700/20'
           : 'bg-transparent'
       }`}
     >
@@ -81,7 +81,7 @@ const Header = () => {
               <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">R</span>
               </div>
-              <div className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Rohit Kashyap
               </div>
             </Link>
@@ -94,8 +94,8 @@ const Header = () => {
                 <motion.div
                   className={`font-medium transition-colors duration-200 relative group cursor-pointer ${
                     pathname === item.href 
-                      ? 'text-blue-600' 
-                      : 'text-gray-700 hover:text-blue-600'
+                      ? 'text-blue-400' 
+                      : 'text-gray-300 hover:text-blue-400'
                   }`}
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
@@ -116,7 +116,7 @@ const Header = () => {
                 href={personalInfo.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -126,7 +126,7 @@ const Header = () => {
                 href={personalInfo.socialLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -136,7 +136,7 @@ const Header = () => {
                 href={personalInfo.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -156,7 +156,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="lg:hidden text-gray-700 hover:text-blue-600 transition-colors duration-200"
+            className="lg:hidden text-gray-300 hover:text-blue-400 transition-colors duration-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileTap={{ scale: 0.9 }}
           >

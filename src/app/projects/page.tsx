@@ -18,11 +18,11 @@ export default function Projects() {
   // Use the actual projects data instead of hardcoded featured projects
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="pt-24 pb-12 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -30,10 +30,10 @@ export default function Projects() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-6">
               My Projects
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Showcasing innovative solutions and cutting-edge technologies across diverse industries
             </p>
           </motion.div>
@@ -41,7 +41,7 @@ export default function Projects() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -49,8 +49,8 @@ export default function Projects() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-4">Featured Projects</h2>
+            <p className="text-lg text-gray-300">
               Highlighting some of my most impactful and successful projects
             </p>
           </motion.div>
@@ -140,7 +140,7 @@ export default function Projects() {
       </section>
 
       {/* All Projects */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -148,8 +148,8 @@ export default function Projects() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">All Projects</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-4">All Projects</h2>
+            <p className="text-lg text-gray-300">
               Complete portfolio of my development work
             </p>
           </motion.div>
@@ -262,7 +262,7 @@ export default function Projects() {
       </section>
 
       {/* Project Stats */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -279,8 +279,8 @@ export default function Projects() {
                 className="text-center"
               >
                 <div className="text-4xl mb-2">{stat.icon}</div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-gray-300">{stat.label}</div>
               </motion.div>
             ))}
           </div>

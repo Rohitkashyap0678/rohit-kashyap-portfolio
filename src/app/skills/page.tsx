@@ -143,15 +143,15 @@ export default function Skills() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-purple-300/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-200/20 to-blue-300/20 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -162,20 +162,20 @@ export default function Skills() {
             className="text-center mb-16"
           >
             <motion.span 
-              className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-medium mb-4"
+              className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 border border-blue-500/30 rounded-full text-sm font-medium mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
               Technical Expertise
             </motion.span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Skills &{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Expertise
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Comprehensive technical skills spanning modern web development technologies, frameworks, and industry best practices
             </p>
           </motion.div>
@@ -188,14 +188,14 @@ export default function Skills() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-gray-700/30 text-center group hover:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5 }}
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${stat.color} rounded-xl flex items-center justify-center text-white text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <stat.icon />
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
+                <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-gray-300 text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -203,7 +203,7 @@ export default function Skills() {
       </section>
 
       {/* Skills Categories */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -211,8 +211,8 @@ export default function Skills() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Technical Proficiency</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-4">Technical Proficiency</h2>
+            <p className="text-lg text-gray-300">
               Explore my expertise across different technology domains and frameworks
             </p>
           </motion.div>
@@ -226,7 +226,7 @@ export default function Skills() {
                 className={`flex items-center space-x-3 px-6 py-4 rounded-2xl font-medium transition-all duration-300 min-w-[200px] ${
                   activeCategory === category.key
                     ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-500 hover:text-blue-600 hover:shadow-md'
+                    : 'bg-gray-900/50 backdrop-blur-xl text-gray-300 border-2 border-gray-700/30 hover:border-blue-500 hover:text-blue-400 hover:shadow-md'
                 }`}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -246,7 +246,7 @@ export default function Skills() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className={`bg-gradient-to-br ${skillCategories.find(c => c.key === activeCategory)?.bgColor} rounded-3xl p-8 md:p-12 border border-gray-200 relative overflow-hidden`}
+              className="bg-gray-900/50 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-gray-700/30 relative overflow-hidden"
             >
               {/* Background Pattern */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-white/50 to-transparent rounded-full blur-3xl"></div>
@@ -256,10 +256,10 @@ export default function Skills() {
                   <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${skillCategories.find(c => c.key === activeCategory)?.color} rounded-2xl text-white text-3xl mb-6 shadow-lg`}>
                     {React.createElement(skillCategories.find(c => c.key === activeCategory)?.icon!)}
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-3xl font-bold text-white mb-4">
                     {skillCategories.find(c => c.key === activeCategory)?.title}
                   </h3>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                     {skillCategories.find(c => c.key === activeCategory)?.description}
                   </p>
                 </div>
@@ -271,22 +271,22 @@ export default function Skills() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+                      className="bg-gray-800/50 backdrop-blur-xl rounded-2xl p-6 shadow-md border border-gray-600/30 hover:shadow-lg transition-all duration-300 group"
                       whileHover={{ y: -5 }}
                       onMouseEnter={() => setHoveredSkill(skill)}
                       onMouseLeave={() => setHoveredSkill(null)}
                     >
                       <div className="flex items-center justify-between mb-4">
-                        <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{skill}</h4>
+                        <h4 className="font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">{skill}</h4>
                         <motion.span 
-                          className="text-sm font-bold text-gray-500 group-hover:text-blue-600 transition-colors duration-300"
+                          className="text-sm font-bold text-gray-300 group-hover:text-blue-400 transition-colors duration-300"
                           animate={{ scale: hoveredSkill === skill ? 1.1 : 1 }}
                         >
                           {getSkillProficiency(skill)}%
                         </motion.span>
                       </div>
                       
-                      <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                      <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ 
@@ -299,7 +299,7 @@ export default function Skills() {
                       </div>
                       
                       <motion.div 
-                        className="mt-4 text-xs text-gray-500"
+                        className="mt-4 text-xs text-gray-400"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: hoveredSkill === skill ? 1 : 0 }}
                         transition={{ duration: 0.2 }}
@@ -319,7 +319,7 @@ export default function Skills() {
       </section>
 
       {/* Specializations */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -327,8 +327,8 @@ export default function Skills() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Core Specializations</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">Core Specializations</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Key areas where I excel and deliver exceptional results for clients and projects
             </p>
           </motion.div>
@@ -340,7 +340,7 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-gray-700/30 hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-center space-x-4 mb-6">
@@ -348,19 +348,19 @@ export default function Skills() {
                     <spec.icon />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
                       {spec.title}
                     </h3>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 leading-relaxed mb-6">{spec.description}</p>
+                <p className="text-gray-300 leading-relaxed mb-6">{spec.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                   {spec.skills.map((skill, skillIndex) => (
                     <motion.span
                       key={skillIndex}
-                      className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200"
+                      className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 rounded-full text-sm font-medium border border-blue-500/30"
                       whileHover={{ scale: 1.05, y: -2 }}
                     >
                       {skill}
@@ -374,7 +374,7 @@ export default function Skills() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -382,8 +382,8 @@ export default function Skills() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Services I Offer</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">Services I Offer</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Leveraging my technical expertise to deliver comprehensive solutions for your business needs
             </p>
           </motion.div>
@@ -395,23 +395,23 @@ export default function Skills() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 group"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-700/30 p-8 hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
                 <div className={`w-20 h-20 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                   {service.icon}
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-8 leading-relaxed">{service.description}</p>
+                <p className="text-gray-300 mb-8 leading-relaxed">{service.description}</p>
                 
                 <ul className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <motion.li 
                       key={featureIndex} 
-                      className="flex items-start space-x-3 text-gray-700"
+                      className="flex items-start space-x-3 text-gray-300"
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: featureIndex * 0.1 }}
@@ -437,7 +437,7 @@ export default function Skills() {
       </section>
 
       {/* Skill Highlights */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -445,8 +445,8 @@ export default function Skills() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose My Technical Skills</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-4">Why Choose My Technical Skills</h2>
+            <p className="text-lg text-gray-300">
               What sets my expertise apart and makes me the right choice for your projects
             </p>
           </motion.div>
@@ -483,14 +483,14 @@ export default function Skills() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="text-center bg-gray-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-gray-700/30 hover:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5 }}
               >
                 <div className={`w-20 h-20 bg-gradient-to-r ${highlight.color} rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 shadow-lg`}>
                   <highlight.icon className="text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-4">{highlight.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{highlight.description}</p>
+                <h3 className="text-lg font-bold text-white mb-4">{highlight.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{highlight.description}</p>
               </motion.div>
             ))}
           </div>

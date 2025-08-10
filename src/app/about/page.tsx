@@ -42,15 +42,15 @@ export default function About() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-purple-300/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-200/20 to-blue-300/20 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -63,26 +63,26 @@ export default function About() {
             >
               <div className="mb-6">
                 <motion.span 
-                  className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-medium mb-4"
+                  className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 border border-blue-500/30 rounded-full text-sm font-medium mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
                   About Me
                 </motion.span>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                   Hi, I'm{' '}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                     {personalInfo.name}
                   </span>
                 </h1>
-                <h2 className="text-xl md:text-2xl text-gray-600 mb-6 font-medium">
+                <h2 className="text-xl md:text-2xl text-gray-300 mb-6 font-medium">
                   {personalInfo.title}
                 </h2>
               </div>
 
               <motion.p 
-                className="text-lg text-gray-700 mb-8 leading-relaxed"
+                className="text-lg text-gray-300 mb-8 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -243,7 +243,7 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -251,8 +251,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Numbers That Matter</h2>
-            <p className="text-lg text-gray-600">Achievements that reflect my commitment to excellence</p>
+            <h2 className="text-3xl font-bold text-white mb-4">Numbers That Matter</h2>
+            <p className="text-lg text-gray-300">Achievements that reflect my commitment to excellence</p>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -271,8 +271,8 @@ export default function About() {
                 >
                   {stat.icon}
                 </motion.div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                <div className="text-gray-300 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -280,7 +280,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -288,8 +288,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">My Core Values</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">My Core Values</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               The principles that guide my work and drive my passion for creating exceptional digital experiences
             </p>
           </motion.div>
@@ -301,14 +301,14 @@ export default function About() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-gray-700/30 hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -10 }}
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${value.color} rounded-xl flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -316,7 +316,7 @@ export default function About() {
       </section>
 
       {/* Education Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -324,8 +324,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Education & Learning Journey</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">Education & Learning Journey</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Continuous learning and formal education that shaped my technical expertise and professional growth
             </p>
           </motion.div>
@@ -337,7 +337,7 @@ export default function About() {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition-all duration-300"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl border border-gray-700/30 p-8 hover:shadow-lg transition-all duration-300"
               >
                 <div className="grid lg:grid-cols-4 gap-6 items-center">
                   <div className="lg:col-span-1">
@@ -350,9 +350,9 @@ export default function About() {
                   </div>
                   
                   <div className="lg:col-span-3">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{edu.degree}</h3>
-                    <p className="text-lg text-gray-700 mb-2">{edu.institution}</p>
-                    <p className="text-gray-600 mb-4">{edu.location}</p>
+                    <h3 className="text-xl font-bold text-white mb-2">{edu.degree}</h3>
+                    <p className="text-lg text-gray-300 mb-2">{edu.institution}</p>
+                    <p className="text-gray-400 mb-4">{edu.location}</p>
                     
                     {edu.gpa && (
                       <p className="text-gray-600 mb-4">
@@ -385,7 +385,7 @@ export default function About() {
       </section>
 
       {/* Certifications */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -393,8 +393,8 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Professional Certifications</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-4">Professional Certifications</h2>
+            <p className="text-lg text-gray-300">
               Validated expertise through industry-recognized certifications and achievements
             </p>
           </motion.div>
@@ -406,7 +406,7 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 group"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-700/30 p-8 hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-start space-x-6">
@@ -414,8 +414,8 @@ export default function About() {
                     <FiAward className="text-white" size={28} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{cert.title}</h3>
-                    <p className="text-gray-600 mb-2 font-medium">{cert.provider}</p>
+                    <h3 className="text-xl font-bold text-white mb-3">{cert.title}</h3>
+                    <p className="text-gray-300 mb-2 font-medium">{cert.provider}</p>
                     <p className="text-gray-500 text-sm mb-2">Issued: {cert.issued}</p>
                     {cert.id && (
                       <p className="text-gray-500 text-sm">

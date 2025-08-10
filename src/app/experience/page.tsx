@@ -24,15 +24,15 @@ export default function Experience() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <main className="min-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <Header />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-purple-300/20 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-200/20 to-blue-300/20 rounded-full blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -43,20 +43,20 @@ export default function Experience() {
             className="text-center mb-16"
           >
             <motion.span 
-              className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-medium mb-4"
+              className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 border border-blue-500/30 rounded-full text-sm font-medium mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
               Professional Journey
             </motion.span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               My{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Experience
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A journey of growth, innovation, and delivering exceptional results across diverse projects and technologies
             </p>
           </motion.div>
@@ -69,14 +69,14 @@ export default function Experience() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-gray-700/30 text-center group hover:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5 }}
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${highlight.color} rounded-xl flex items-center justify-center text-white text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <highlight.icon />
                 </div>
-                <div className="text-2xl font-bold text-gray-900 mb-1">{highlight.value}</div>
-                <div className="text-gray-600 text-sm">{highlight.label}</div>
+                <div className="text-2xl font-bold text-white mb-1">{highlight.value}</div>
+                <div className="text-gray-300 text-sm">{highlight.label}</div>
               </motion.div>
             ))}
           </div>
@@ -84,7 +84,7 @@ export default function Experience() {
       </section>
 
       {/* Experience Timeline */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -92,8 +92,8 @@ export default function Experience() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Professional Timeline</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-4">Professional Timeline</h2>
+            <p className="text-lg text-gray-300">
               Full-time positions and internships that shaped my career and expertise
             </p>
           </motion.div>
@@ -120,7 +120,7 @@ export default function Experience() {
                 {/* Content Card */}
                 <div className={`ml-20 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'}`}>
                   <motion.div 
-                    className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+                    className="bg-gray-900/50 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-700/30 p-8 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
                     whileHover={{ y: -5 }}
                   >
                     {/* Background Pattern */}
@@ -137,40 +137,40 @@ export default function Experience() {
                             {exp.type}
                           </span>
                         </div>
-                        <span className="text-sm text-gray-500 font-medium">{exp.duration}</span>
+                        <span className="text-sm text-gray-400 font-medium">{exp.duration}</span>
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{exp.title}</h3>
-                      <h4 className="text-lg font-semibold text-blue-600 mb-4">{exp.company}</h4>
+                      <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
+                      <h4 className="text-lg font-semibold text-blue-400 mb-4">{exp.company}</h4>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                        <div className="flex items-center space-x-2 text-gray-600">
-                          <FiMapPin size={16} className="text-blue-500" />
+                        <div className="flex items-center space-x-2 text-gray-300">
+                          <FiMapPin size={16} className="text-blue-400" />
                           <span className="text-sm">{exp.location}</span>
                         </div>
-                        <div className="flex items-center space-x-2 text-gray-600">
-                          <FiCalendar size={16} className="text-green-500" />
+                        <div className="flex items-center space-x-2 text-gray-300">
+                          <FiCalendar size={16} className="text-green-400" />
                           <span className="text-sm">{exp.period}</span>
                         </div>
                       </div>
                       
-                      <p className="text-gray-700 mb-6 leading-relaxed">{exp.description}</p>
+                      <p className="text-gray-300 mb-6 leading-relaxed">{exp.description}</p>
                       
                       {/* Skills */}
                       <div className="mb-4">
-                        <h5 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">Key Technologies</h5>
+                        <h5 className="text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wide">Key Technologies</h5>
                         <div className="flex flex-wrap gap-2">
                           {exp.skills.slice(0, 6).map((skill, skillIndex) => (
                             <motion.span
                               key={skillIndex}
-                              className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200 hover:shadow-md transition-all duration-200"
+                              className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 rounded-full text-sm font-medium border border-blue-500/30 hover:shadow-md transition-all duration-200"
                               whileHover={{ scale: 1.05, y: -2 }}
                             >
                               {skill}
                             </motion.span>
                           ))}
                           {exp.skills.length > 6 && (
-                            <span className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm font-medium">
+                            <span className="px-3 py-1 bg-gray-800/50 text-gray-400 rounded-full text-sm font-medium border border-gray-600/30">
                               +{exp.skills.length - 6} more
                             </span>
                           )}
@@ -186,7 +186,7 @@ export default function Experience() {
       </section>
 
       {/* Skills Proficiency */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -194,8 +194,8 @@ export default function Experience() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Core Competencies</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">Core Competencies</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Technical skills and expertise developed through years of hands-on experience
             </p>
           </motion.div>
@@ -207,13 +207,13 @@ export default function Experience() {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-gray-700/30 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-lg font-semibold text-gray-900">{skill.name}</h4>
-                  <span className="text-2xl font-bold text-gray-900">{skill.level}%</span>
+                  <h4 className="text-lg font-semibold text-white">{skill.name}</h4>
+                  <span className="text-2xl font-bold text-white">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
@@ -228,7 +228,7 @@ export default function Experience() {
       </section>
 
       {/* Client Work Showcase */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -236,8 +236,8 @@ export default function Experience() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recent Client Success Stories</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-4">Recent Client Success Stories</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Testimonials and results from my recent freelance projects and client collaborations
             </p>
           </motion.div>
@@ -249,7 +249,7 @@ export default function Experience() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 group"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-700/30 p-8 hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
                 {/* Header */}
@@ -267,7 +267,7 @@ export default function Experience() {
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-900 mb-4 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-lg font-bold text-white mb-4 leading-tight line-clamp-2 group-hover:text-blue-400 transition-colors duration-300">
                   {work.title}
                 </h3>
                 
@@ -277,26 +277,26 @@ export default function Experience() {
                     <FiDollarSign className="text-green-600" size={20} />
                     <span className="text-2xl font-bold text-green-600">{work.price}</span>
                   </div>
-                  <span className="text-gray-500 text-sm font-medium">{work.type}</span>
+                  <span className="text-gray-400 text-sm font-medium">{work.type}</span>
                 </div>
                 
                 {/* Date */}
-                <p className="text-gray-500 text-sm mb-4 flex items-center space-x-2">
+                <p className="text-gray-400 text-sm mb-4 flex items-center space-x-2">
                   <FiCalendar size={14} />
                   <span>{work.period}</span>
                 </p>
                 
                 {/* Feedback */}
-                <div className="bg-blue-50 rounded-xl p-4 mb-4">
-                  <p className="text-gray-700 text-sm italic leading-relaxed line-clamp-4">
+                <div className="bg-blue-500/10 rounded-xl p-4 mb-4 border border-blue-500/20">
+                  <p className="text-gray-300 text-sm italic leading-relaxed line-clamp-4">
                     "{work.feedback}"
                   </p>
                 </div>
                 
                 {/* Response */}
                 {work.freelancerResponse && (
-                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4">
-                    <p className="text-green-800 text-sm">
+                  <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl p-4 border border-green-500/20">
+                    <p className="text-green-300 text-sm">
                       <strong>My Response:</strong> {work.freelancerResponse}
                     </p>
                   </div>
@@ -325,7 +325,7 @@ export default function Experience() {
       </section>
 
       {/* Expertise Areas */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -333,8 +333,8 @@ export default function Experience() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Areas of Expertise</h2>
-            <p className="text-lg text-gray-600">
+            <h2 className="text-3xl font-bold text-white mb-4">Areas of Expertise</h2>
+            <p className="text-lg text-gray-300">
               Key domains where I deliver exceptional results and drive innovation
             </p>
           </motion.div>
@@ -389,19 +389,19 @@ export default function Experience() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-300 group"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-2xl shadow-lg border border-gray-700/30 p-8 hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
                 <div className={`w-16 h-16 bg-gradient-to-r ${expertise.color} rounded-xl flex items-center justify-center text-white text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <expertise.icon />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{expertise.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">{expertise.description}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{expertise.title}</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">{expertise.description}</p>
                 <div className="space-y-2">
                   {expertise.metrics.map((metric, metricIndex) => (
                     <div key={metricIndex} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"></div>
-                      <span className="text-sm text-gray-700 font-medium">{metric}</span>
+                      <span className="text-sm text-gray-300 font-medium">{metric}</span>
                     </div>
                   ))}
                 </div>

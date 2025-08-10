@@ -19,11 +19,11 @@ export default function Home() {
       <Hero />
       
       {/* Enhanced Quick Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+      <section className="py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-200/20 to-purple-300/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-200/20 to-pink-300/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -33,10 +33,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Excellence</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Excellence</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Proven track record of delivering exceptional results for clients worldwide
             </p>
           </motion.div>
@@ -52,8 +52,8 @@ export default function Home() {
                 className="text-center group"
               >
                 <motion.div 
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-2xl transition-all duration-300"
-                  whileHover={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
+                  className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-8 shadow-lg border border-gray-700/30 hover:shadow-2xl hover:border-blue-500/50 transition-all duration-300"
+                  whileHover={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
                 >
                   <motion.div 
                     className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300"
@@ -62,14 +62,14 @@ export default function Home() {
                     {stat.icon}
                   </motion.div>
                   <motion.div 
-                    className="text-4xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2"
+                    className="text-4xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: index * 0.1 + 0.5 }}
                   >
                     {stat.value}
                   </motion.div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="text-gray-300 font-medium">{stat.label}</div>
                 </motion.div>
               </motion.div>
             ))}
@@ -78,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* About Preview */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -86,13 +86,13 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 About Me
               </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
                 {personalInfo.description}
               </p>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 {personalInfo.tagline}
               </p>
               
@@ -141,7 +141,7 @@ export default function Home() {
       </section>
 
       {/* Upwork Showcase */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -149,10 +149,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Top Rated on Upwork
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Join 30+ satisfied clients who have trusted me with their projects
             </p>
           </motion.div>
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* Recent Reviews */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -253,10 +253,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Recent Client Reviews
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-300">
               What my clients say about working with me
             </p>
           </motion.div>
@@ -268,7 +268,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-lg border border-gray-700/30 p-6 shadow-sm hover:shadow-md transition-shadow duration-200"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center space-x-1">
@@ -279,8 +279,8 @@ export default function Home() {
                   <span className="text-lg font-bold text-green-600">{work.price}</span>
                 </div>
                 
-                <h4 className="font-semibold text-gray-900 mb-2 line-clamp-2">{work.title}</h4>
-                <p className="text-gray-600 text-sm mb-3 line-clamp-3">"{work.feedback}"</p>
+                <h4 className="font-semibold text-white mb-2 line-clamp-2">{work.title}</h4>
+                <p className="text-gray-300 text-sm mb-3 line-clamp-3">"{work.feedback}"</p>
                 
                 <span className="text-blue-600 text-sm font-medium">{work.category}</span>
               </motion.div>
@@ -303,7 +303,7 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -311,10 +311,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Featured Projects
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-300">
               Showcasing some of my best work
             </p>
           </motion.div>
@@ -326,7 +326,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
+                className="bg-gray-900/50 backdrop-blur-xl rounded-lg shadow-lg border border-gray-700/30 overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
               >
                 <div className="relative overflow-hidden">
                   <Image
@@ -344,8 +344,8 @@ export default function Home() {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
                   
@@ -353,13 +353,13 @@ export default function Home() {
                     {project.skills.slice(0, 3).map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs"
+                        className="px-2 py-1 bg-blue-500/20 text-blue-200 rounded text-xs border border-blue-500/30"
                       >
                         {skill}
                       </span>
                     ))}
                     {project.skills.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">
+                      <span className="px-2 py-1 bg-gray-800/50 text-gray-400 rounded text-xs border border-gray-600/30">
                         +{project.skills.length - 3} more
                       </span>
                     )}

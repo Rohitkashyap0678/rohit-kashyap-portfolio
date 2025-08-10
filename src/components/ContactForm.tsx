@@ -90,9 +90,9 @@ const ContactForm = () => {
     <div className="w-full">
       <Toaster />
       
-      <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center space-x-3">
-          <FiSend className="text-blue-600" />
+      <div className="bg-gray-900/50 backdrop-blur-xl rounded-lg shadow-lg border border-gray-700/30 p-8">
+        <h3 className="text-2xl font-bold text-white mb-6 flex items-center space-x-3">
+          <FiSend className="text-blue-400" />
           <span>Send a Message</span>
         </h3>
 
@@ -100,7 +100,7 @@ const ContactForm = () => {
           {/* Name and Email in a row */}
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="from_name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="from_name" className="block text-sm font-medium text-gray-300 mb-2">
                 Name
               </label>
               <div className="relative">
@@ -112,14 +112,14 @@ const ContactForm = () => {
                   value={formData.from_name}
                   onChange={handleChange}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 placeholder-gray-400"
                   placeholder="Your name"
                 />
               </div>
             </div>
             
             <div>
-              <label htmlFor="from_email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="from_email" className="block text-sm font-medium text-gray-300 mb-2">
                 Email
               </label>
               <div className="relative">
@@ -131,7 +131,7 @@ const ContactForm = () => {
                   value={formData.from_email}
                   onChange={handleChange}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 placeholder-gray-400"
                   placeholder="your@email.com"
                 />
               </div>
@@ -140,7 +140,7 @@ const ContactForm = () => {
           
           {/* Subject Field */}
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
               Subject
             </label>
             <input
@@ -150,14 +150,14 @@ const ContactForm = () => {
               value={formData.subject}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 placeholder-gray-400"
               placeholder="Project inquiry"
             />
           </div>
           
           {/* Message Field */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
               Message
             </label>
             <div className="relative">
@@ -169,7 +169,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 placeholder-gray-400"
                 placeholder="Tell me about your project..."
               />
             </div>

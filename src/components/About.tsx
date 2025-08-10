@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiCode, FiUsers, FiStar, FiZap, FiTarget, FiCheckCircle } from 'react-icons/fi';
 import { personalInfo, skills } from '@/data/portfolio';
+import { HoverEffect } from './ui/card-hover-effect';
+import { BentoGrid, BentoGridItem } from './ui/bento-grid';
+import { TextGenerateEffect } from './ui/text-generate-effect';
+import { BackgroundGradient } from './ui/background-gradient';
 
 const About = () => {
   const [ref, inView] = useInView({
@@ -96,7 +100,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -107,184 +111,177 @@ const About = () => {
         >
           {/* About Header */}
           <motion.div variants={itemVariants} className="text-center">
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+            <motion.span 
+              className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-xl text-blue-200 rounded-full text-sm font-semibold mb-8 border border-blue-500/30 shadow-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
+            >
               About Me
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            </motion.span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
               Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 {personalInfo.name}
               </span>{' '}
-              – Senior Front-end Developer (5+ Years of Experience)
+              <br className="md:hidden" />
+              – Senior Front-end Developer
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              {personalInfo.description}
-            </p>
+            <div className="max-w-4xl mx-auto">
+              <TextGenerateEffect 
+                words={personalInfo.description}
+                className="text-xl md:text-2xl text-gray-300 leading-relaxed"
+              />
+            </div>
           </motion.div>
 
           {/* Skills & Expertise */}
           <motion.div variants={itemVariants}>
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">🔧 My Skills & Expertise</h3>
-              <p className="text-lg text-gray-600">
+            <div className="text-center mb-16">
+              <h3 className="text-4xl font-bold text-white mb-6">🔧 My Skills & Expertise</h3>
+              <p className="text-xl text-gray-300">
                 Technologies and tools I use to bring your ideas to life
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <BentoGrid className="max-w-4xl mx-auto">
               {skillCategories.map((category, index) => (
-                <motion.div
+                <BentoGridItem
                   key={category.name}
-                  className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 hover:shadow-xl transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -5, scale: 1.02 }}
-                >
-                  <div className="text-3xl mb-4">{category.icon}</div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                    {category.name}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.slice(0, 8).map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className={`text-xs px-3 py-1 rounded-full bg-gradient-to-r ${
-                          category.color === 'blue' ? 'from-blue-100 to-blue-200 text-blue-800' :
-                          category.color === 'purple' ? 'from-purple-100 to-purple-200 text-purple-800' :
-                          category.color === 'green' ? 'from-green-100 to-green-200 text-green-800' :
-                          'from-orange-100 to-orange-200 text-orange-800'
-                        }`}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
+                  title={category.name}
+                  description={
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {category.skills.slice(0, 6).map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="text-xs px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 border border-blue-500/30"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  }
+                  header={
+                    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br dark:from-neutral-900 dark:to-neutral-800 from-neutral-100 to-neutral-200 items-center justify-center">
+                      <div className="text-6xl">{category.icon}</div>
+                    </div>
+                  }
+                  className={index === 3 || index === 6 ? "md:col-span-2" : ""}
+                  icon={<div className="text-2xl">{category.icon}</div>}
+                />
               ))}
-            </div>
+            </BentoGrid>
           </motion.div>
 
           {/* What I Deliver */}
           <motion.div variants={itemVariants}>
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">✅ What I Deliver</h3>
-              <p className="text-lg text-gray-600">
+            <div className="text-center mb-16">
+              <h3 className="text-4xl font-bold text-white mb-6">✅ What I Deliver</h3>
+              <p className="text-xl text-gray-300">
                 Quality standards that drive exceptional results
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {deliverables.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-start space-x-3 p-4 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ x: 5 }}
-                >
-                  <FiCheckCircle className="w-6 h-6 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 font-medium">{item}</span>
-                </motion.div>
+                <BackgroundGradient key={index} className="rounded-[22px] max-w-sm p-4 bg-white dark:bg-zinc-900">
+                  <motion.div
+                    className="flex items-start space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ x: 5 }}
+                  >
+                    <FiCheckCircle className="w-6 h-6 text-green-400 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-200 font-medium">{item}</span>
+                  </motion.div>
+                </BackgroundGradient>
               ))}
             </div>
           </motion.div>
 
           {/* My Values */}
           <motion.div variants={itemVariants}>
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">My Values</h3>
-              <p className="text-lg text-gray-600">
+            <div className="text-center mb-16">
+              <h3 className="text-4xl font-bold text-white mb-6">My Values</h3>
+              <p className="text-xl text-gray-300">
                 The principles that guide my work and approach to development
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {values.map((value, index) => (
+            <HoverEffect items={values.map(value => ({
+              title: value.title,
+              description: value.description,
+              link: "#",
+              icon: (
                 <motion.div
-                  key={index}
-                  className="text-center group"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -10 }}
+                  className={`w-16 h-16 rounded-full bg-gradient-to-r ${value.gradient} flex items-center justify-center text-white shadow-lg`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  <motion.div
-                    className={`w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r ${value.gradient} flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-300`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
-                    {value.icon}
-                  </motion.div>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  {value.icon}
                 </motion.div>
-              ))}
-            </div>
+              )
+            }))} />
           </motion.div>
 
           {/* My Process */}
           <motion.div variants={itemVariants}>
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">My Process</h3>
-              <p className="text-lg text-gray-600">
+            <div className="text-center mb-16">
+              <h3 className="text-4xl font-bold text-white mb-6">My Process</h3>
+              <p className="text-xl text-gray-300">
                 A proven methodology that ensures successful project delivery
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {process.map((step, index) => (
-                <motion.div
-                  key={index}
-                  className="relative text-center group"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -5 }}
-                >
-                  {/* Connection Line */}
-                  {index < process.length - 1 && (
-                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-gray-300 to-gray-200 z-0" />
-                  )}
-                  
+                <BackgroundGradient key={index} className="rounded-[22px] max-w-sm p-6 bg-white dark:bg-zinc-900">
                   <motion.div
-                    className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${step.gradient} flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 relative z-10`}
-                    whileHover={{ scale: 1.1 }}
+                    className="text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                    transition={{ delay: index * 0.2 }}
+                    whileHover={{ y: -5 }}
                   >
-                    {step.step}
+                    <motion.div
+                      className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${step.gradient} flex items-center justify-center text-white text-2xl font-bold shadow-lg`}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {step.step}
+                    </motion.div>
+                    <h4 className="text-xl font-bold text-white mb-3">{step.title}</h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
                   </motion.div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
-                </motion.div>
+                </BackgroundGradient>
               ))}
             </div>
           </motion.div>
 
           {/* Free Consultation CTA */}
           <motion.div variants={itemVariants}>
-            <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 md:p-12 text-center text-white">
-              <h3 className="text-3xl font-bold mb-4">🎉 Free 15-Minute Discovery Call</h3>
-              <p className="text-xl mb-8 opacity-90">
-                Let's talk! I offer a FREE 15-minute consultation to understand your goals and how I can help. 
-                I only take on work where I know I can provide real value.
-              </p>
-              <motion.button
-                className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                📞 Let's connect — message me today!
-              </motion.button>
-              <p className="text-sm opacity-75 mt-4">
-                I usually reply within a few hours. Looking forward to helping you build something great.
-              </p>
-            </div>
+            <BackgroundGradient className="rounded-[22px] max-w-4xl mx-auto p-4 bg-white dark:bg-zinc-900">
+              <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-xl rounded-2xl p-8 md:p-12 text-center border border-blue-500/30">
+                <h3 className="text-4xl font-bold mb-6 text-white">🎉 Free 15-Minute Discovery Call</h3>
+                <p className="text-xl mb-8 text-gray-300">
+                  Let's talk! I offer a FREE 15-minute consultation to understand your goals and how I can help. 
+                  I only take on work where I know I can provide real value.
+                </p>
+                <motion.button
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition-all duration-300 border border-blue-400/30"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    const element = document.querySelector('#contact');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  📞 Let's connect — message me today!
+                </motion.button>
+                <p className="text-sm text-gray-400 mt-4">
+                  I usually reply within a few hours. Looking forward to helping you build something great.
+                </p>
+              </div>
+            </BackgroundGradient>
           </motion.div>
         </motion.div>
       </div>

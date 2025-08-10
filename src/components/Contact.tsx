@@ -96,7 +96,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -106,13 +106,16 @@ const Contact = () => {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+            <motion.span 
+              className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-xl text-blue-200 rounded-full text-sm font-semibold mb-8 border border-blue-500/30 shadow-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
+            >
               Get In Touch
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            </motion.span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">
               Contact Me
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Let's start a conversation
             </p>
           </motion.div>
@@ -134,19 +137,19 @@ const Contact = () => {
                 >
                   {method.icon}
                 </motion.div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{method.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3">{method.title}</h3>
                 {method.link ? (
                   <motion.a
                     href={method.link}
                     target={method.link.startsWith('http') ? '_blank' : undefined}
                     rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 break-all"
+                    className="text-blue-400 hover:text-blue-300 font-medium transition-colors duration-200 break-all"
                     whileHover={{ scale: 1.05 }}
                   >
                     {method.info}
                   </motion.a>
                 ) : (
-                  <p className="text-gray-600 font-medium">{method.info}</p>
+                  <p className="text-gray-300 font-medium">{method.info}</p>
                 )}
               </motion.div>
             ))}
@@ -155,8 +158,8 @@ const Contact = () => {
           {/* Connect With Me */}
           <motion.div variants={itemVariants}>
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Connect With Me</h3>
-              <p className="text-lg text-gray-600">
+              <h3 className="text-3xl font-bold text-white mb-4">Connect With Me</h3>
+              <p className="text-lg text-gray-300">
                 Follow me on social media for updates, insights, and behind-the-scenes content
               </p>
             </div>
@@ -168,7 +171,7 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-16 h-16 rounded-full ${social.bgColor} flex items-center justify-center ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
+                  className="w-16 h-16 rounded-full bg-gray-900/50 backdrop-blur-xl border border-gray-700/30 flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:border-blue-500/50"
                   initial={{ opacity: 0, scale: 0 }}
                   animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                   transition={{ delay: index * 0.1 }}
